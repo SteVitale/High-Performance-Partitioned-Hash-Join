@@ -51,9 +51,27 @@ The final phase scales the architecture horizontally across multiple nodes using
 
 ---
 
-## Build & Run Instructions
+## Project Structure & Documentation Policy
 
-*(Note: Navigate to the specific directory for detailed, per-module compilation scripts and cluster submission details).*
+To preserve the original, heavily optimized environment and ensure scientific reproducibility, the repository adheres to the following structure:
+
+* **Execution & Deployment:** In each module directory, there is a specific `README.md` dedicated exclusively to "how to use", compile, and run the automated benchmarking scripts (`launch.sh` or SLURM templates).
+* **Architectural & Theoretical Details:** All in-depth explanations, hardware-aware justifications, mathematical cost models, and empirical microbenchmark charts are comprehensively discussed in the **comprehensive PDF report included inside each module folder**.
+
+**Quick Start Example:**
+
+```bash
+# Clone the repository
+git clone 
+cd High-Performance-Hash-Join/02-parallel-hash-join
+
+# Refer to the local README.md for "how to use" commands:
+./launch.sh 15000000 16000000 47 65400 2048 16
+
+# Open the local PDF report in the same directory for deep architectural details.
+```
+
+## Build & Run Instructions*
 
 **Prerequisites:**
 * GCC (with AVX2 support)
@@ -61,4 +79,3 @@ The final phase scales the architecture horizontally across multiple nodes using
 * OpenMP
 * MPI (e.g., OpenMPI or MPICH)
 
-```bash
